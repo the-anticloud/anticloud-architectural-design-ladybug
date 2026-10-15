@@ -42,4 +42,6 @@ README_ANTICLOUD.md
 30_LOI/
 _PRIOR_DOCS/
 node_modules/
-
+OFFICIAL_BENCHMARKS/
+anticloud/
+*.csv
