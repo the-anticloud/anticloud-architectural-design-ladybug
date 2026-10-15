@@ -1,0 +1,123 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.5",
+  "serialNumber": "urn:uuid:c37cd1ca-edbe-5aa5-b443-7e789e85105b",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2026-10-08T17:05:32Z",
+    "component": {
+      "type": "application",
+      "name": "LADYBUG",
+      "version": "329a3b851a61",
+      "bom-ref": "pkg:generic/anticloud/LADYBUG@329a3b851a61",
+      "purl": "pkg:generic/anticloud/LADYBUG@329a3b851a61",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    "properties": [
+      {
+        "name": "anticloud:source-commit",
+        "value": "329a3b851a61e061b163c83d9d5c7bac845e050b"
+      },
+      {
+        "name": "anticloud:source-url",
+        "value": "https://github.com/ladybug-tools/ladybug"
+      },
+      {
+        "name": "anticloud:tier",
+        "value": "tier-agent"
+      }
+    ]
+  },
+  "components": [
+    {
+      "type": "library",
+      "name": "Threads",
+      "version": "unspecified",
+      "purl": "pkg:generic/Threads",
+      "bom-ref": "native/Threads@unspecified"
+    },
+    {
+      "type": "library",
+      "name": "Arrow",
+      "version": "unspecified",
+      "purl": "pkg:generic/Arrow",
+      "bom-ref": "native/Arrow@unspecified"
+    },
+    {
+      "type": "library",
+      "name": "cpptrace",
+      "version": "unspecified",
+      "purl": "pkg:generic/cpptrace",
+      "bom-ref": "native/cpptrace@unspecified"
+    },
+    {
+      "type": "library",
+      "name": "OpenSSL",
+      "version": "unspecified",
+      "purl": "pkg:generic/OpenSSL",
+      "bom-ref": "native/OpenSSL@unspecified"
+    },
+    {
+      "type": "library",
+      "name": "ladybug",
+      "version": "= ladybug.cli:main",
+      "purl": "pkg:pypi/ladybug@ladybug.cli:main",
+      "bom-ref": "pypi/ladybug@= ladybug.cli:main"
+    },
+    {
+      "type": "library",
+      "name": "GTest",
+      "version": "unspecified",
+      "purl": "pkg:generic/GTest",
+      "bom-ref": "native/GTest@unspecified"
+    },
+    {
+      "type": "library",
+      "name": "Python3",
+      "version": "unspecified",
+      "purl": "pkg:generic/Python3",
+      "bom-ref": "native/Python3@unspecified"
+    },
+    {
+      "type": "library",
+      "name": "NUM_THREADS",
+      "version": "=%d",
+      "purl": "pkg:pypi/num-threads@%d",
+      "bom-ref": "pypi/NUM_THREADS@=%d"
+    },
+    {
+      "type": "library",
+      "name": "-DLBUG_SPLIT_DEBUG_SYMBOLS",
+      "version": "=OFF",
+      "purl": "pkg:pypi/-dlbug-split-debug-symbols@OFF",
+      "bom-ref": "pypi/-DLBUG_SPLIT_DEBUG_SYMBOLS@=OFF"
+    },
+    {
+      "type": "library",
+      "name": "EXTRA_CMAKE_FLAGS",
+      "version": "=%s -DBUILD_LBUG=FALSE -DBUILD_SHELL=FALSE ",
+      "purl": "pkg:pypi/extra-cmake-flags@%s -DBUILD_LBUG=FALSE -DBUILD_SHELL=FALSE ",
+      "bom-ref": "pypi/EXTRA_CMAKE_FLAGS@=%s -DBUILD_LBUG=FALSE -DBUILD_SHELL=FALSE "
+    },
+    {
+      "type": "library",
+      "name": "-DLBUG_API_USE_PRECOMPILED_LIB",
+      "version": "=TRUE ",
+      "purl": "pkg:pypi/-dlbug-api-use-precompiled-lib@TRUE ",
+      "bom-ref": "pypi/-DLBUG_API_USE_PRECOMPILED_LIB@=TRUE "
+    },
+    {
+      "type": "library",
+      "name": "-DLBUG_API_PRECOMPILED_LIB_PATH",
+      "version": "=%s",
+      "purl": "pkg:pypi/-dlbug-api-precompiled-lib-path@%s",
+      "bom-ref": "pypi/-DLBUG_API_PRECOMPILED_LIB_PATH@=%s"
+    }
+  ]
+}

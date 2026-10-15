@@ -1,0 +1,324 @@
+{
+  "schema": "anticloud.tier-bench/1",
+  "project": "LADYBUG",
+  "source": {
+    "repo_path": "E:\\fenta\\Downloads\\The Anticloud\\ANTICLOUD_REPOS\\ARCHITECTURAL_DESIGN\\LADYBUG\\UPSTREAM_CLONE",
+    "git": {
+      "head": "329a3b851a61e061b163c83d9d5c7bac845e050b",
+      "url": "https://github.com/ladybug-tools/ladybug",
+      "branch": "master",
+      "committed_at": "2026-09-22T10:02:35-07:00"
+    }
+  },
+  "metrics": {
+    "files_total": 98,
+    "source_files_scanned": 80,
+    "lines_of_code": 29166,
+    "languages": {
+      ".py": 79,
+      "(none)": 5,
+      ".md": 4,
+      ".json": 2,
+      ".txt": 2,
+      ".yaml": 2,
+      ".sh": 1,
+      ".in": 1,
+      ".yml": 1,
+      ".cof": 1
+    }
+  },
+  "licence": {
+    "spdx": "AGPL-3.0",
+    "class": "B",
+    "source_file": "LICENSE",
+    "redistribution_allowed": false
+  },
+  "dependencies": {
+    "count": 1,
+    "unique": 1,
+    "by_ecosystem": {
+      "pypi": 1
+    },
+    "list": [
+      {
+        "ecosystem": "pypi",
+        "name": "ladybug",
+        "version": "= ladybug.cli:main",
+        "source_file": "setup.py",
+        "raw": "ladybug = ladybug.cli:main"
+      }
+    ]
+  },
+  "owasp_top10": {
+    "total_findings": 17,
+    "files_with_findings": 17,
+    "severity": {
+      "high": 7,
+      "medium": 5,
+      "low": 5
+    },
+    "categories": {
+      "A01-BrokenAccessControl": {
+        "count": 0,
+        "findings": []
+      },
+      "A02-CryptographicFailures": {
+        "count": 0,
+        "findings": []
+      },
+      "A03-Injection": {
+        "count": 7,
+        "findings": [
+          {
+            "severity": "high",
+            "file": "ladybug/config.py",
+            "line": 208,
+            "cwe": "CWE-78",
+            "snippet": "use_shell = True if os.name == 'nt' else False"
+          },
+          {
+            "severity": "high",
+            "file": "ladybug/datacollection.py",
+            "line": 750,
+            "cwe": "CWE-95",
+            "snippet": "statement and uses native Python operators instead of eval() statements."
+          },
+          {
+            "severity": "high",
+            "file": "ladybug/datautil.py",
+            "line": 217,
+            "cwe": "CWE-502",
+            "snippet": "data = pickle.load(inf)"
+          },
+          {
+            "severity": "high",
+            "file": "ladybug/dt.py",
+            "line": 54,
+            "cwe": "CWE-502",
+            "snippet": "This method is necessary for the pickle.loads() call to work."
+          },
+          {
+            "severity": "high",
+            "file": "ladybug/sql.py",
+            "line": 230,
+            "cwe": "CWE-89",
+            "snippet": "query = 'SELECT {} FROM ReportDataDictionary WHERE Name=?'.format(cols)"
+          },
+          {
+            "severity": "high",
+            "file": "ladybug/_datacollectionbase.py",
+            "line": 422,
+            "cwe": "CWE-95",
+            "snippet": "statement and uses native Python operators instead of eval() statements."
+          },
+          {
+            "severity": "high",
+            "file": "ladybug/datatype/base.py",
+            "line": 170,
+            "cwe": "CWE-95",
+            "snippet": "minimum = eval(min_statement, namespace)"
+          }
+        ]
+      },
+      "A04-InsecureDesign": {
+        "count": 4,
+        "findings": [
+          {
+            "severity": "low",
+            "file": "ladybug/color.py",
+            "line": 165,
+            "cwe": "CWE-",
+            "snippet": "# TODO: Add support for CMYK"
+          },
+          {
+            "severity": "low",
+            "file": "ladybug/epw.py",
+            "line": 394,
+            "cwe": "CWE-",
+            "snippet": "# TODO: do a better job of trying to sense the encoding"
+          },
+          {
+            "severity": "low",
+            "file": "ladybug/monthlychart.py",
+            "line": 159,
+            "cwe": "CWE-",
+            "snippet": "# TODO: consider supporting different periods by analyzing their overlap"
+          },
+          {
+            "severity": "low",
+            "file": "ladybug/sunpath.py",
+            "line": 249,
+            "cwe": "CWE-",
+            "snippet": "# TODO(mostapha): This should be more generic and based on a method"
+          }
+        ]
+      },
+      "A05-SecurityMisconfiguration": {
+        "count": 5,
+        "findings": [
+          {
+            "severity": "medium",
+            "file": "ladybug/graphic.py",
+            "line": 113,
+            "cwe": "CWE-1188",
+            "snippet": "self.legend_parameters.properties_3d._is_segment_height_default = True"
+          },
+          {
+            "severity": "medium",
+            "file": "ladybug/legend.py",
+            "line": 125,
+            "cwe": "CWE-1188",
+            "snippet": "self._is_min_default = True"
+          },
+          {
+            "severity": "medium",
+            "file": "ladybug/psychchart.py",
+            "line": 874,
+            "cwe": "CWE-1188",
+            "snippet": "l_par.properties_3d._is_segment_height_default = True"
+          },
+          {
+            "severity": "medium",
+            "file": "ladybug/cli/translate.py",
+            "line": 30,
+            "cwe": "CWE-1188",
+            "snippet": "'file.', type=int, default=1, show_default=True)"
+          },
+          {
+            "severity": "medium",
+            "file": "ladybug/cli/__init__.py",
+            "line": 77,
+            "cwe": "CWE-1188",
+            "snippet": "type=click.File('w'), default='-', show_default=True)"
+          }
+        ]
+      },
+      "A06-VulnerableComponents": {
+        "count": 0,
+        "findings": []
+      },
+      "A07-AuthFailures": {
+        "count": 0,
+        "findings": []
+      },
+      "A08-SoftwareDataIntegrity": {
+        "count": 1,
+        "findings": [
+          {
+            "severity": "low",
+            "file": "ladybug/skymodel.py",
+            "line": 750,
+            "cwe": "CWE-319",
+            "snippet": "[2] <http://solardat.uoregon.edu/SolarRadiationBasics.html>, Eqs."
+          }
+        ]
+      },
+      "A09-LoggingMonitoringFailures": {
+        "count": 0,
+        "findings": []
+      },
+      "A10-SSRF": {
+        "count": 0,
+        "findings": []
+      }
+    }
+  },
+  "owasp_llm_top10": {
+    "total_findings": 0,
+    "files_with_findings": 0,
+    "severity": {
+      "high": 0,
+      "medium": 0,
+      "low": 0
+    },
+    "categories": {
+      "LLM01-PromptInjection": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM02-SensitiveInfoDisclosure": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM03-SupplyChain": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM04-DataPoisoning": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM05-ImproperOutputHandling": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM06-ExcessiveAgency": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM07-SystemPromptLeak": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM08-VectorEmbeddingWeaknesses": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM09-Misinformation": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM10-UnboundedConsumption": {
+        "count": 0,
+        "findings": []
+      }
+    }
+  },
+  "sbom": {
+    "bomFormat": "CycloneDX",
+    "specVersion": "1.5",
+    "serialNumber": "urn:uuid:c37cd1ca-edbe-5aa5-b443-7e789e85105b",
+    "version": 1,
+    "metadata": {
+      "timestamp": "2026-10-05T14:34:07Z",
+      "component": {
+        "type": "application",
+        "name": "LADYBUG",
+        "version": "329a3b851a61",
+        "bom-ref": "pkg:generic/anticloud/LADYBUG@329a3b851a61",
+        "purl": "pkg:generic/anticloud/LADYBUG@329a3b851a61",
+        "licenses": [
+          {
+            "license": {
+              "id": "AGPL-3.0"
+            }
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "anticloud:source-commit",
+          "value": "329a3b851a61e061b163c83d9d5c7bac845e050b"
+        },
+        {
+          "name": "anticloud:source-url",
+          "value": "https://github.com/ladybug-tools/ladybug"
+        },
+        {
+          "name": "anticloud:tier",
+          "value": "tier-agent"
+        }
+      ]
+    },
+    "components": [
+      {
+        "type": "library",
+        "name": "ladybug",
+        "version": "= ladybug.cli:main",
+        "purl": "pkg:pypi/ladybug@ladybug.cli:main",
+        "bom-ref": "pypi/ladybug@= ladybug.cli:main"
+      }
+    ]
+  },
+  "elapsed_seconds": 18.59
+}
