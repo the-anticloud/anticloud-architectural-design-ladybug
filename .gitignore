@@ -20,8 +20,6 @@ artifacts/
 # on every run, so committing them would leave the working tree permanently
 # dirty and make `git status --porcelain` useless as a health signal.  They stay
 # on disk (the compliance maps reference them as evidence) but are not tracked.
-BENCH.json
-sbom.cdx.json
 
 # Local scratch/progress notes for the build, not part of the distribution.
 _build/
@@ -30,7 +28,6 @@ _build/
 UPSTREAM_CLONE/
 UPSTREAM/
 ISOLATED_LAB_RESULTS/
-OFFICIAL_BENCHMARKS/
 LEDGERS/
 ledger.jsonl
 ledger.aioss
@@ -43,8 +40,6 @@ README_ANTICLOUD.md
 28_TECHNICAL_WHITEPAPER/
 29_INVESTOR_MEMO/
 30_LOI/
-anticloud/
 _PRIOR_DOCS/
 node_modules/
-*.csv
 
